@@ -58,7 +58,7 @@ const LoginScreen = () => {
         };
 
         fetch(
-            'http://localhost:3001/users/login',
+            'http://localhost:8080/users/login',
             {
                 method: 'POST',
                 headers: {
