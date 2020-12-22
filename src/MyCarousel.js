@@ -54,6 +54,7 @@ function MyCarousel(){
                                 </li>
                                 <li className="nav-item">
                                 <Link to="/deliver" className="nav-link" ><MarkunreadMailboxIcon/> Deliveries</Link>
+                                
                                 </li>
                             </ul>
                         </nav>

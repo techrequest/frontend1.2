@@ -2,6 +2,7 @@ import React from 'react';
 import TeQuestHeader from './TeQuestHeader';
 import SideBarMenu from './SideBarMenu';
 import FooterMenuItems from './FooterMenuItems';
+import RegistrationScreen from './RegistrationScreen';
 
 function RegisterScreen () {
   return (
@@ -15,19 +16,18 @@ function RegisterScreen () {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="product-view-top">
-                                    <div className="row">
-                                        <div className="col-md-4">
-                                            
                                                 <h1>
                                                   Register
                                                 </h1>
-                                        </div>
-                                    </div>
+                                        <h6>
+                                        Te-Quest is a platform to bring together consumers and providers.
+                                        </h6>
                                   </div>
                                   <div className="product-view-top">
-                                      <div className="row">
-                                                      Te-Quest is a platform to bring together consumers and providers.
+                                      <div className="bleft">
+                                        <RegistrationScreen>
 
+                                        </RegistrationScreen>
                                       </div>
                                   </div>
                                 </div>

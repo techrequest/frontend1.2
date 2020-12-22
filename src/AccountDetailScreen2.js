@@ -2,9 +2,9 @@ import React from 'react';
 import TeQuestHeader from './TeQuestHeader';
 import SideBarMenu from './SideBarMenu';
 import FooterMenuItems from './FooterMenuItems';
-import LoginValidation from './LoginValidation';
+import AccountDetailValidation from './AccountDetailValidation';
 
-function LoginScreen () {
+function AccountDetailScreen () {
   return (
     <div className="App">
 
@@ -16,8 +16,10 @@ function LoginScreen () {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="product-view-top">
+                                    
+                                            
                                                 <h1>
-                                                  Login In Your Account
+                                                  Account Details
                                                 </h1>
                                                 <h6>
                                                 Te-Quest is a platform to bring together consumers and providers.
@@ -25,8 +27,8 @@ function LoginScreen () {
                                        
                                   </div>
                                   <div className="product-view-top">
-                                      <div className="bleft">
-                                        <LoginValidation></LoginValidation>
+                                      <div className="row">
+                                          <AccountDetailValidation/>
                                       </div>
                                   </div>
                                 </div>
@@ -45,8 +47,9 @@ function LoginScreen () {
                    
                 </div>
                 <FooterMenuItems></FooterMenuItems>
+
     </div>
   );
 }
 
-export default LoginScreen;
+export default AccountDetailScreen;

@@ -16,17 +16,15 @@ function ManagementScreen () {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="product-view-top">
-                                    <div className="row">
-                                        <div className="col-md-4">
+                                   
                                             
                                                 <h1>
                                                   Management
                                                 </h1>
-                                        </div>
-                                    </div>
+                                       
                                   </div>
                                   <div className="product-view-top">
-                                      <div className="row">
+                                      <div className="bleft">
                                                       Te-Quest is a platform to bring together consumers and providers.
 
                                       </div>

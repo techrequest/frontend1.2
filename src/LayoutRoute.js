@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Link } from 'react-router-dom';
+import AppContext from './AppContext';
 import NavBar from './NavBar';
 
 
 const LayoutRoute = (props) => {
+
+    const [globalState, setGlobalState] = useContext(AppContext);
+
     return (
         <React.Fragment>
         <div>
