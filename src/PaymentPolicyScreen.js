@@ -20,7 +20,7 @@ function PaymentPolicyScreen () {
                                                 </h1>
                                   </div>
                                   <div className="product-view-top">
-                                      <div className="dleft">
+                                      <div className="bleft">
                                                       Te-Quest is a platform to bring together consumers and providers.
                                                       <br></br>
                                                       <br></br>
