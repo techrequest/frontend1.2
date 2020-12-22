@@ -2456,6 +2456,27 @@ h2 {
 
 
 /**********************************/
-/******** SideBar Meni CSS *******/
+/******** SideBar Menu CSS *******/
 /**********************************/
+
+
+
+/****************************************/
+/******** Page Text Alignment CSS *******/
+/****************************************/
+div.acenter {
+  text-align: center;
+}
+
+div.bleft {
+  text-align: left;
+}
+
+div.cright {
+  text-align: right;
+}
+
+div.cjustify {
+  text-align: justify;
+}
 

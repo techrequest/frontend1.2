@@ -15,18 +15,26 @@ function FAQScreen () {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="product-view-top">
-                                    <div className="row">
-                                        <div className="col-md-4">
+                                    
                                             
                                                 <h1>
                                                   FAQ
                                                 </h1>
-                                        </div>
-                                    </div>
+                                        
                                   </div>
                                   <div className="product-view-top">
-                                      <div className="row">
+                                      <div className="bleft">
                                                       Te-Quest is a platform to bring together consumers and providers.
+
+                                                      <br></br>
+                                                      <br></br>
+
+                                                      Page under construction.
+
+                                                      <br></br>
+                                                      <br></br>
+
+                                                      We want to make sure we give you the correct information sowe will take some time to make this right
 
                                       </div>
                                   </div>
