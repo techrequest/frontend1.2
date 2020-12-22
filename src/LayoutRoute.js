@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import NavBar from './NavBar';
+import TeQuestHeader from './TeQuestHeader';
+import FooterMenuItems from './FooterMenuItems';
 
 
 const LayoutRoute = (props) => {
@@ -62,9 +64,12 @@ const LayoutRoute = (props) => {
       
         </NavBar>
 
+        <TeQuestHeader></TeQuestHeader>
+
         <Route path={props.path} exact={props.exact} component={props.component} />
 
         </div>
+        <FooterMenuItems></FooterMenuItems>
         </React.Fragment>
     )
 }

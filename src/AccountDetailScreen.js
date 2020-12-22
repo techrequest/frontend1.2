@@ -1,13 +1,19 @@
-import React from 'react';
-import TeQuestHeader from './TeQuestHeader';
+import React, {useState, useContext} from 'react';
+import {Link} from 'react-router-dom';
+
 import SideBarMenu from './SideBarMenu';
-import FooterMenuItems from './FooterMenuItems';
+import AppContext from './AppContext';
+
 
 function AccountDetailScreen () {
-  return (
-    <div className="App">
+  const [globalState, setGlobalState] = useContext(AppContext);
 
-      <TeQuestHeader></TeQuestHeader>
+  return (
+      
+          
+    <div className="App">
+    {
+    globalState.loggedIn &&
       <div className="product-view">
             <div className="container-fluid">
                 <div className="row">
@@ -26,7 +32,7 @@ function AccountDetailScreen () {
                                   </div>
                                   <div className="product-view-top">
                                       <div className="row">
-                                                      Te-Quest is a platform to bring together consumers and providers.
+                                                     Some confidential information
 
                                       </div>
                                   </div>
@@ -41,13 +47,48 @@ function AccountDetailScreen () {
                     </div>
                 </div>
             </div>
-            <div>
-                    <p> </p>
-                   
-                </div>
-                <FooterMenuItems></FooterMenuItems>
+    
+      }
+      {
+          <div className="product-view">
+          <div className="container-fluid">
+              <div className="row">
+                  <div className="col-lg-8">
+                      <div className="row">
+                          <div className="col-md-12">
+                              <div className="product-view-top">
+                                  <div className="row">
+                                      <div className="col-md-4">
+                                          
+                                              <h1>
+                                                Account Details
+                                              </h1>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div className="product-view-top">
+                                    <div className="row">
+                                                    You must be logged in to access your account details.
 
-    </div>
+                                    </div>
+                                    <br/>
+                                    <Link to='/login' className = "btn btn-primary">Login</Link>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div className="col-lg-4 sidebar">
+                              <SideBarMenu>
+
+                              </SideBarMenu>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+  
+      }
+      </div>
   );
 }
 

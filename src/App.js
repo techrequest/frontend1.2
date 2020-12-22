@@ -1,6 +1,9 @@
 import React from 'react';
+import {useState, useEffect} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+
+import AppContext from './AppContext'
 import LayoutRoute from './LayoutRoute';
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
@@ -26,7 +29,13 @@ import ReturnPolicyScreen from './ReturnPolicyScreen';
 
 
 const App = () => {
+  
+  const [globalState, setGlobalState] = useState({
+    loggedIn: localStorage.getItem('jwt') ? true:false
+  });
+
   return (
+    <AppContext.Provider value={[globalState, setGlobalState]}>
     <BrowserRouter>
         <Switch>
             <LayoutRoute path="/" exact={true} component={HomeScreen} />
@@ -61,6 +70,7 @@ const App = () => {
 
         </Switch>
     </BrowserRouter>
+    </AppContext.Provider>
   )
 }
 
