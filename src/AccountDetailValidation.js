@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom';
 
 import SideBarMenu from './SideBarMenu';
 import AppContext from './AppContext';
-import TeQuestHeader from './TeQuestHeader'
 
 
-function AccountDetailScreen () {
+function AccountDetailValidation () {
   const [globalState, setGlobalState] = useContext(AppContext);
 
   return (
@@ -15,24 +14,24 @@ function AccountDetailScreen () {
     <div className="App">
     {
     globalState.loggedIn &&
-    
-      <div className="product-view" >
-         <TeQuestHeader></TeQuestHeader>
+      <div className="product-view">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="product-view-top">
-                                    
+                                    <div className="row">
+                                        <div className="col-md-4">
                                             
                                                 <h1>
                                                   Account Details
                                                 </h1>
-                                       
+                                        </div>
+                                    </div>
                                   </div>
                                   <div className="product-view-top">
-                                      <div className="bleft">
+                                      <div className="row">
                                                      Some confidential information
 
                                       </div>
@@ -52,19 +51,20 @@ function AccountDetailScreen () {
       }
       {
           <div className="product-view">
-              <TeQuestHeader></TeQuestHeader>
           <div className="container-fluid">
               <div className="row">
                   <div className="col-lg-8">
                       <div className="row">
                           <div className="col-md-12">
                               <div className="product-view-top">
-                                  
+                                  <div className="row">
+                                      <div className="col-md-4">
                                           
                                               <h1>
                                                 Account Details
                                               </h1>
-                                     
+                                      </div>
+                                  </div>
                                 </div>
                                 <div className="product-view-top">
                                     <div className="bleft">
@@ -72,7 +72,7 @@ function AccountDetailScreen () {
 
                                     </div>
                                     <br/>
-                                    {/* <Link to='/login' className = "btn btn-primary">Login</Link> */}
+                                    <Link to='/login' className = "btn btn-primary">Login</Link>
                                 </div>
                               </div>
                           </div>
@@ -92,4 +92,4 @@ function AccountDetailScreen () {
   );
 }
 
-export default AccountDetailScreen;
+export default AccountDetailValidation;

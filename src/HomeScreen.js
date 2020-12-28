@@ -16,6 +16,8 @@ function HomeScreen() {
   return (
     <div className="App">
 
+        <TeQuestHeader></TeQuestHeader>
+        
         <MyCarousel></MyCarousel>
 
         <BoxLabelsPart></BoxLabelsPart>
@@ -26,6 +28,7 @@ function HomeScreen() {
 
         <NewsletterSubscribe></NewsletterSubscribe>
 
+        <FooterMenuItems></FooterMenuItems>
     </div>
   );
 }

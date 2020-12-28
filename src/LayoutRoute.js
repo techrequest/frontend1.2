@@ -1,16 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Link } from 'react-router-dom';
+import AppContext from './AppContext';
 import NavBar from './NavBar';
-import TeQuestHeader from './TeQuestHeader';
-import FooterMenuItems from './FooterMenuItems';
 
 
 const LayoutRoute = (props) => {
+
+    const [globalState, setGlobalState] = useContext(AppContext);
+
+    const handleLogOut = () => {
+        localStorage.removeItem('jwt');
+        setGlobalState(
+            {
+                ...globalState,
+                loggedIn: false
+            }
+        )
+    }
+
     return (
         <React.Fragment>
         <div>
-            <NavBar>
-                <div className="collapse navbar-collapse" ><b>
+            <NavBar extraComponent={
+
+                globalState.loggedIn ?
+                <React.Fragment>
+                   <div className="collapse navbar-collapse pl-5" ><b>
+                     <ul className="navbar-nav mr-auto">
+                         <li>
+                         <Link to='/editprofile'
+                    className="nav-link">Edit Profile</Link>
+                         </li>
+                        <li className="nav-item active">
+                    <Link to='/logout' onClick={handleLogOut} 
+                    className="nav-link">Logout</Link>
+                       </li>
+                            </ul>
+                        </b>
+                    </div>
+                </React.Fragment> :
+
+                <React.Fragment>
+                     <div className="collapse navbar-collapse pl-5" ><b>
+                     <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                                    <Link to="/login" className="nav-link">Login</Link>
+                                    </li><li className="nav-item active">
+                                    <Link to="/registeracc" className="nav-link">Register</Link>
+                                </li>
+                            </ul>
+                        </b>
+                    </div>
+                </React.Fragment>
+                }>
+
+                <div className="collapse navbar-collapse pr-5" ><b>
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                         <Link to="/" className="nav-link" > Home</Link>
@@ -43,13 +87,8 @@ const LayoutRoute = (props) => {
                                 <li className="nav-item">
                                     <Link to="/faq" className="nav-link" > FAQ</Link>
                                 </li>
-                                <li className="nav-item dropdown active">
-                                    <Link to="myaccount" className="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > My Account</Link>
-                                        <div className="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                            <Link to="/login" className="dropdown-item" > Login</Link>
-                                        <div className="dropdown-divider"></div>
-                                        <Link to="/registeracc" className="dropdown-item" > Register</Link>
-                                    </div>
+                                <li className="nav-item">
+                                    <Link to="/myaccount" className="nav-link" > My Account</Link>
                                 </li>
                     </ul>
                 </b>
@@ -64,12 +103,9 @@ const LayoutRoute = (props) => {
       
         </NavBar>
 
-        <TeQuestHeader></TeQuestHeader>
-
         <Route path={props.path} exact={props.exact} component={props.component} />
 
         </div>
-        <FooterMenuItems></FooterMenuItems>
         </React.Fragment>
     )
 }
